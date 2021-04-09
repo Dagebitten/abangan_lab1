@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Your Bujo{% endblock title%}
+{% block header %}Your Bullet Journal{% endblock header %}
+{% block content %}
+   <center>
+      {% if request.method == "GET" %}
+      <form action="home" method="post" >
+         {% csrf_token %}
+         {{ form }}
+         <input type="submit" value="OK">
+      </form>
+      {% endif %}
+   </center>
+   {% if request.method == "POST" %}
+   <center>
+   <h3> Hello, {{ UserName }}! Today is going to be a great day! </h3>
+   </center>
+   {% endif %}
+{% endblock content %}

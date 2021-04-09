@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Profile{% endblock title %}
+{% block header %}Profile{% endblock header %}
+{% block content %}
+    <center>
+        <img src="{% static '' %}" style="width:100px;height:100px">
+        <p>This is you {{ UserName }}! Recorded to have been born at least once, congratulations!</p>
+        <p>Research finds that you have also been seen viewing this page!</p>
+    </center>
+{% endblock content %}

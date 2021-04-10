@@ -4,16 +4,14 @@
 {% block content %}
    <center>
       {% if request.method == "GET" %}
-      <form action="home" method="post" >
+         <form action="home" method="POST">
          {% csrf_token %}
          {{ form }}
-         <input type="submit" value="OK">
+      <input type="submit" value="OK">
       </form>
       {% endif %}
+      {% if request.method == "POST" %}
+      <h3> Hello, {{ UserName }}! Today is going to be a great day! </h3>
+      {% endif %}
    </center>
-   {% if request.method == "POST" %}
-   <center>
-   <h3> Hello, {{ UserName }}! Today is going to be a great day! </h3>
-   </center>
-   {% endif %}
 {% endblock content %}
